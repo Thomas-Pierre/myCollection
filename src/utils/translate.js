@@ -5,7 +5,8 @@ import { getDeep } from '@utils';
 
 import fallback from '@src/translations/fr_FR.json';
 
-const translations = (await import(`@src/translations/${get(locale)}.json`).default) || fallback;
+// const translations = (await import(`@src/translations/${get(locale)}.json`).default) || fallback;
+const translations = fallback;
 
 /**
  * @param {string} string
