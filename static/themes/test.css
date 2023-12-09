@@ -1,0 +1,7 @@
+@import './default.css';
+
+:root {
+	--main-color: #ff55ff;
+	--alt-color: #55ff55;
+	--text-color: #ffffff;
+}
