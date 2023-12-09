@@ -1,39 +1,32 @@
 html {
 	// 1rem = 1px
-	font-size: 6px;
-	font-size: 6.25%;
+	font-size: 1px;
 	font-family: var(--font-family);
-	background-color: var(--alt-color);
 	width: 100vw;
 	height: 100vh;
 }
+
+@import '@styles/includes/mixins';
 
 body {
 	min-height: 100%;
 	font-size: 16rem;
 	color: var(--text-color);
 	background-color: var(--alt-color);
-	position: relative;
+	background-image: url('images/background.jpg');
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
 	scroll-behavior: smooth;
+	padding-bottom: var(--navbar-height);
+}
 
-	&::before {
-		content: '';
-		position: absolute;
-		z-index: 0;
-		inset: 0;
-		background-image: linear-gradient(
-			to bottom,
-			var(--alt-color) 20%,
-			var(--main-color),
-			var(--alt-color)
-		);
-		background-size: auto 100vh;
-		background-attachment: fixed;
-		opacity: 0.75;
-	}
 
-	* {
-		position: relative;
-		z-index: 1;
+
+
+@include on-desktop() {
+	body {
+		padding-bottom: 0;
+		padding-left: var(--navbar-width);
 	}
 }
