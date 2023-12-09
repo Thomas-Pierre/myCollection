@@ -9,7 +9,12 @@ const config = {
 			fallback: undefined,
 			precompress: false,
 			strict: true
-		})
+		}),
+		alias: {
+			'@src': './src',
+			'@components': './src/components',
+			'@modules': './node_modules'
+		}
 	}
 };
 
