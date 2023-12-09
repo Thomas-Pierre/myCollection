@@ -1,0 +1,12 @@
+root = true
+
+[*]
+charset = utf-8
+indent_size = 1
+indent_style = tab
+max_line_length = 140
+insert_trailing_newline = false
+trim_trailing_whitespace = false
+
+[*.{css, scss, less}]
+max_line_length = off
