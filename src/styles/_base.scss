@@ -16,7 +16,7 @@ body {
 
 	&::before {
 		content: '';
-		position: absolute;
+		position: fixed;
 		inset-inline: 0;
 		height: 100vh;
 		background-image: url('/images/background.jpg');
