@@ -3,9 +3,6 @@ import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	compilerOptions: {
-		generate: false
-	},
 	preprocess: preprocess({
 		scss: {
 			prependData: `
@@ -19,7 +16,7 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: undefined,
-			precompress: false,
+			precompress: true,
 			strict: false
 		}),
 		alias: {
