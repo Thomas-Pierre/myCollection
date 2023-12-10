@@ -1,0 +1,30 @@
+svg {
+	fill: currentColor;
+	height: 1em;
+	width: 1em;
+	transform-origin: center center;
+
+	&.circle {
+		width: 1.5em;
+		height: 1.5em;
+		border: 0.075em solid currentColor;
+		padding: 0.25em;
+		border-radius: 100%;
+	}
+
+	@keyframes spin {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	&.spin {
+		animation-name: spin;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		animation-duration: var(--spin-duration);
+	}
+}

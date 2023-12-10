@@ -1,41 +1,61 @@
-@import '@styles/includes/mixins';
-
 nav {
 	position: fixed;
 	width: 100%;
 	bottom: 0;
-	padding-inline: var(--spacing-2);
-	padding-block: var(--spacing-4);
+	padding: $spacing-4;
 	display: flex;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: center;
-	border-top: 1rem solid var(--main-color);
-	box-shadow: 0 0 50rem #333;
+	border-top: 1rem solid $main-color;
+	box-shadow: 0 0 50rem rgba($black, 0.75);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
-	font-size: 24rem;
 
-	@include on-desktop() {
-		padding: var(--spacing-4);
+	button {
+		opacity: 0.5;
+		font-size: min(7vw, 32rem);
+		display: flex;
+
+		&.current {
+			transform: scale(1.1);
+			color: $main-color;
+			opacity: 1;
+			filter: drop-shadow(0 0 0.125em currentColor);
+		}
+	}
+}
+
+:global(#app) {
+	padding-bottom: var(--navbar-height);
+}
+
+@include on-desktop() {
+	nav {
 		left: 0;
 		right: auto;
 		width: auto;
 		inset-block: 0;
 		flex-direction: column;
 		justify-content: flex-start;
+		align-items: center;
 		border-top: none;
-		border-right: 1rem solid var(--main-color);
-	}
-}
+		gap: $spacing-8;
+		padding: $spacing-4;
+		border-top: none;
+		border-right: 1rem solid $main-color;
 
-.plus {
-	display: block;
-	border: 2rem solid #ddd;
-	line-height: 0;
-	width: 50rem;
-	height: 50rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 100%;
+		span {
+			order: 1;
+			margin-bottom: auto;
+		}
+
+		button {
+			order: 2;
+		}
+	}
+
+	:global(#app) {
+		padding-bottom: 0;
+		padding-left: var(--navbar-width);
+	}
 }

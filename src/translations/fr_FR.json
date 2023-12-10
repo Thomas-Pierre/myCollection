@@ -1,7 +1,16 @@
 {
 	"pages": {
 		"home": {
-			"title": "Titre de la home"
+			"title": "Ma collection"
+		}
+	},
+	"common": {
+		"navbar": {
+			"collection": "Ma collection",
+			"settings": "Réglages",
+			"menu": "Menu principal",
+			"user": "Utilisateur",
+			"addItem": "Ajouter un object à ma collection"
 		}
 	}
 }

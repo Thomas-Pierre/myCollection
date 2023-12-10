@@ -1,0 +1,25 @@
+$main-color: #e4887e;
+$alt-color: #696a8b;
+$text-color: #ffffff;
+
+$main-color-light: ligthen($main-color, 10);
+$main-color-lighter: ligthen($main-color, 20);
+$main-color-dark: darken($main-color, 10);
+$main-color-darker: darken($main-color, 20);
+
+$alt-color-light: ligthen($alt-color, 10);
+$alt-color-lighter: ligthen($alt-color, 20);
+$alt-color-dark: darken($alt-color, 10);
+$alt-color-darker: darken($alt-color, 20);
+
+$black: #000000;
+$grey-100: #1a1a1a;
+$grey-200: #333333;
+$grey-300: #4d4d4d;
+$grey-400: #666666;
+$grey-500: #808080;
+$grey-600: #999999;
+$grey-700: #b3b3b3;
+$grey-800: #cccccc;
+$grey-900: #e6e6e6;
+$white: #ffffff;

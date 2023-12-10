@@ -1,0 +1,22 @@
+button.plus {
+	font-size: 15rem;
+	width: 2em;
+	aspect-ratio: 1;
+	border-radius: 100%;
+	margin-inline: 0.5em;
+	color: $text-color;
+	background-color: $alt-color;
+	border: 0.075em solid currentColor;
+	transform: scale(2) translateY(-25%);
+	opacity: 0.85;
+	box-shadow: 0 0.125em 0.5em rgba($black, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@include on-desktop() {
+	button.plus {
+		transform: scale(2.5) translate(12.5%, 25%);
+	}
+}

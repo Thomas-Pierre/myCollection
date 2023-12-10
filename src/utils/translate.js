@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { get } from 'svelte/store';
-import { locale } from '@stores/local';
+import { locale } from '@src/stores/locale';
 import { getDeep } from '@utils';
 
 import fallback from '@src/translations/fr_FR.json';

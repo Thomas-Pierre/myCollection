@@ -1,11 +1,15 @@
-@import '@styles/includes/mixins';
-
 header {
-	padding-inline: var(--spacing-4);
-	padding-block: var(--spacing-5);
+	padding: $spacing-4;
+	border-bottom: 1rem solid rgba($black, 0.25);
 
 	h1 {
 		font-size: 28rem;
 		font-weight: 400;
+	}
+}
+
+@include on-desktop() {
+	header {
+		padding: $spacing-8;
 	}
 }

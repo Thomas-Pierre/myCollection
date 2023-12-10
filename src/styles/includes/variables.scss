@@ -1,6 +1,0 @@
-// SPACING
-:root {
-	@for $i from 1 through 8 {
-		--spacing-#{$i}: #{$i * 4rem};
-	}
-}
