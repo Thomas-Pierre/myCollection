@@ -1,0 +1,67 @@
+a,
+button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 2.5em;
+	gap: 1ch;
+	padding-inline: 0.75em;
+	line-height: 0;
+	border-radius: 0.25em;
+	flex-shrink: 0;
+	transition: transition((box-shadow, background-color), 150ms, ease);
+
+	em {
+		display: flex;
+		font-size: 0.75em;
+		line-height: 1;
+	}
+
+	&.size-s {
+		font-size: 14rem;
+	}
+
+	&.size-m {
+		font-size: 20rem;
+	}
+
+	&.size-l {
+		font-size: 26rem;
+	}
+
+	&.icon-left {
+		padding-left: 0.75em;
+	}
+
+	&.icon-right {
+		padding-right: 0.75em;
+	}
+
+	&.icon-only {
+		padding-inline: 0;
+		aspect-ratio: 1;
+	}
+
+	@each $variant, $backgroundColor,
+		$foregroundColor
+			in (
+				'primary' $main-color $white,
+				'secondary' $alt-color $white,
+				'light' $grey-800 $grey-200,
+				'dark' $grey-200 $white
+			)
+	{
+		&.variant-#{$variant} {
+			color: rgba($foregroundColor, 08);
+			background-color: rgba($backgroundColor, 0.7);
+			border: 0.175em solid $backgroundColor;
+			box-shadow: 0 0.15em 1em 0 rgba($backgroundColor, 0.5);
+
+			&:hover {
+				color: rgba($foregroundColor, 0.95);
+				background-color: rgba($backgroundColor, 0.95);
+				box-shadow: 0 0.15em 1em 0 rgba($backgroundColor, 0.9);
+			}
+		}
+	}
+}

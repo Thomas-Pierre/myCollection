@@ -1,0 +1,16 @@
+@use 'sass:string';
+@use 'sass:list';
+
+@function transition($properties, $duration: 500ms, $easing: ease) {
+	$result: string.unquote('');
+
+	@for $i from 1 through list.length($properties) {
+		$result: string.unquote($result) + #{list.nth($properties, $i)} $duration $easing;
+
+		@if ($i < list.length($properties)) {
+			$result: $result + ', ';
+		}
+	}
+
+	@return $result;
+}

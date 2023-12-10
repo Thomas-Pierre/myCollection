@@ -8,6 +8,7 @@ const config = {
 			prependData: `
 				@import './src/styles/variables';
 				@import './src/styles/mixins';
+				@import './src/styles/functions';
 			`
 		}
 	}),
