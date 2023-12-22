@@ -1,0 +1,41 @@
+.title {
+	display: block;
+	width: 100%;
+	line-height: 1;
+	margin-bottom: 1em;
+
+	&.noMargin {
+		margin-bottom: 0;
+	}
+
+	&.size-xs {
+		font-size: 10rem;
+	}
+	&.size-s {
+		font-size: 12rem;
+	}
+	&.size-m {
+		font-size: 16rem;
+	}
+	&.size-l {
+		font-size: 20rem;
+	}
+	&.size-xl {
+		font-size: 24rem;
+	}
+	&.size-xxl {
+		font-size: 28rem;
+	}
+
+	&.align-left {
+		text-align-last: left;
+	}
+
+	&.align-center {
+		text-align-last: center;
+	}
+
+	&.align-right {
+		text-align-last: right;
+	}
+}

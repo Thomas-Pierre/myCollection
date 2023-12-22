@@ -1,5 +1,5 @@
 <script>
-	import { capitalize } from '@src/utils/string';
+	import { snakeCase } from '@src/utils/string';
 
 	/** @type {string|undefined} */
 	export let icon = undefined;
@@ -15,7 +15,7 @@
 </script>
 
 {#if icon}
-	{#await import(`./Icons/${capitalize(icon)}.svelte`) then { default: svg }}
+	{#await import(`./Icons/${snakeCase(icon)}.svelte`) then { default: svg }}
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 128 128"

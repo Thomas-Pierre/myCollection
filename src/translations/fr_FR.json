@@ -1,12 +1,35 @@
 {
 	"pages": {
 		"home": {
-			"title": "Ma collection"
+			"title": "Ma collection",
+			"name": "Ma collection",
+			"search": {
+				"open": "ouvrir le champs de recherche",
+				"close": "fermer le champs de recherche",
+				"label": "champs de recherche",
+				"placeholder": "rechercher..."
+			}
+		},
+		"help": {
+			"title": "Aide",
+			"name": "Page d'aide"
+		},
+		"settings": {
+			"title": "Réglages",
+			"name": "Mes réglages"
+		},
+		"account": {
+			"title": "Utilisateur",
+			"name": "Mon compte"
+		},
+		"library": {
+			"title": "Ma collection",
+			"name": "Ma collection"
 		}
 	},
 	"common": {
 		"navbar": {
-			"collection": "Ma collection",
+			"library": "Ma collection",
 			"settings": "Réglages",
 			"menu": "Menu principal",
 			"user": "Utilisateur",

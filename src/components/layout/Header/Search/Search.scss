@@ -1,0 +1,53 @@
+$font-size: 28rem;
+
+button {
+	font-size: $font-size;
+}
+
+form {
+	button {
+		position: fixed;
+		inset: 0;
+		z-index: 0;
+		background-color: rgba($black, 0.15);
+		cursor: default;
+		@include backgroundBlur();
+	}
+
+	div {
+		font-size: $font-size;
+		position: absolute;
+		top: $font-size + 2 * $spacing-6;
+		right: $spacing-4;
+		z-index: 1;
+
+		label {
+			display: block;
+			font-size: 0;
+		}
+
+		input[type='search'] {
+			appearance: none;
+			display: block;
+			width: min(500rem, 80vw);
+			padding: $spacing-6 $spacing-4;
+			border-radius: $spacing-2;
+			border: 1rem solid $grey-200;
+			font-size: $font-size;
+			box-shadow: 0 15rem 15rem -15rem rgba($black, 0.75);
+			color: $grey-400;
+
+			&:focus {
+				outline: none;
+			}
+
+			&::placeholder {
+				text-transform: uppercase;
+				font-style: italic;
+				font-size: $font-size * 0.75;
+				font-weight: bold;
+				color: $grey-500;
+			}
+		}
+	}
+}

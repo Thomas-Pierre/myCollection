@@ -6,12 +6,12 @@ nav {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	border-top: 1rem solid $main-color;
 	background-color: rgba($alt-color, 0.5);
 	box-shadow: 0 0 50rem rgba($black, 0.75);
+	@include backgroundBlur(15rem);
 
-	button {
-		opacity: 0.5;
+	a {
+		opacity: 0.7;
 		font-size: min(7vw, 32rem);
 		display: flex;
 
@@ -40,15 +40,13 @@ nav {
 		border-top: none;
 		gap: $spacing-8;
 		padding: $spacing-4;
-		border-top: none;
-		border-right: 1rem solid $main-color;
 
-		span {
+		:global(button.plus) {
 			order: 1;
 			margin-bottom: auto;
 		}
 
-		button {
+		a {
 			order: 2;
 		}
 	}

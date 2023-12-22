@@ -3,6 +3,7 @@
 	import { translate } from '@src/utils/translate';
 	import Picto from '@src/components/ui/Picto/Picto.svelte';
 	import PlusButton from './PlusButton/PlusButton.svelte';
+	import { page } from '$app/stores';
 
 	/** @type {number} */
 	let clientHeight;
@@ -19,26 +20,29 @@
 	onMount(() => {
 		document = window.document;
 	});
+
+	const menuItems = [
+		{ href: '/library', icon: 'files' },
+		{ href: '/settings', icon: 'gear' },
+		{ href: '/help', icon: 'question-mark' },
+		{ href: '/account', icon: 'user' }
+	];
 </script>
 
 <nav bind:clientHeight bind:clientWidth>
-	<button class="current" aria-label={translate('common.navbar.collection')}>
-		<Picto icon="files" />
-	</button>
+	{#each menuItems as { href, icon }, i}
+		<a
+			{href}
+			class:current={$page.route.id === href}
+			title={translate(`common.navbar.${href.replace('/', '')}`)}
+		>
+			<Picto {icon} />
+		</a>
 
-	<button aria-label={translate('common.navbar.settings')}>
-		<Picto icon="gear" />
-	</button>
-
-	<span><PlusButton /></span>
-
-	<button aria-label={translate('common.navbar.menu')}>
-		<Picto icon="burger-menu" />
-	</button>
-
-	<button aria-label={translate('common.navbar.user')}>
-		<Picto icon="user" />
-	</button>
+		{#if i === Math.floor(menuItems.length / 2) - 1}
+			<PlusButton />
+		{/if}
+	{/each}
 </nav>
 
 <style lang="scss">

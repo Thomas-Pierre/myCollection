@@ -1,11 +1,7 @@
 header {
-	padding: $spacing-4;
+	padding: $spacing-8 $spacing-4;
 	border-bottom: 1rem solid rgba($black, 0.25);
-
-	h1 {
-		font-size: 28rem;
-		font-weight: 400;
-	}
+	display: flex;
 }
 
 @include on-desktop() {

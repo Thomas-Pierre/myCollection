@@ -4,6 +4,11 @@ html {
 	font-family: $font-family;
 	width: 100vw;
 	height: 100vh;
+	background-color: $black;
+
+	@include on-mobile() {
+		font-size: 0.9px;
+	}
 }
 
 body {
@@ -30,5 +35,13 @@ body {
 	#app {
 		position: relative;
 		z-index: 1;
+	}
+}
+
+main {
+	padding: $spacing-4;
+
+	@include over-mobile() {
+		padding: $spacing-8;
 	}
 }
