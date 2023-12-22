@@ -23,3 +23,8 @@ $grey-700: #b3b3b3;
 $grey-800: #cccccc;
 $grey-900: #e6e6e6;
 $white: #ffffff;
+
+:export {
+	mainColor: $main-color;
+	altColor: $alt-color;
+}
