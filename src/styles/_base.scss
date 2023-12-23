@@ -53,11 +53,15 @@ body[data-type='dark'] {
 }
 
 main {
-	padding: $spacing-4;
+	padding-block: $spacing-8;
 	min-height: calc(100vh - var(--header-height, 0) - var(--navbar-height, 0));
 
 	@include on-desktop() {
-		padding: $spacing-8;
 		min-height: calc(100vh - var(--header-height, 0));
 	}
+}
+
+.container {
+	max-width: calc(100% - $spacing-8 * 2);
+	margin-inline: auto;
 }

@@ -1,5 +1,8 @@
-$main-color: #e4887e;
+$main-color: #f8c5b8;
 $alt-color: #696a8b;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+$font-family: 'Inter', Arial, sans-serif;
 
 :export {
 	mainColor: $main-color;
