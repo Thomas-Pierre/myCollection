@@ -1,11 +1,27 @@
-export function getVarsFromFile(file) {
-	const result = {};
+export async function extractVariablesFromSCSS(filePath) {
+	try {
+		const { default: scssContent } = await import(filePath);
+		const exportRegex = /:export\s*{\s*([^}]*)\s*}/;
+		const exportMatch = scssContent.match(exportRegex);
 
-	import(file).then(({ default: scss }) => {
-		for (const [, key, color] of scss.matchAll(/([a-zA-Z0-9]+)\s*:\s*#([0-9a-fA-F]{6});/g)) {
-			result[key] = `#${color}`;
+		if (exportMatch) {
+			const exportContent = exportMatch[1];
+			const variableRegex = /([a-zA-Z0-9_-]+)\s*:\s*([^;]+);/g;
+			const variableMatches = exportContent.matchAll(variableRegex);
+			const result = {};
+
+			for (const match of variableMatches) {
+				const [, key, value] = match;
+				result[key.trim()] = value.trim();
+			}
+
+			return result;
+		} else {
+			console.log('No :export{} section found in the SCSS file.');
+			return {};
 		}
-	});
-
-	return result;
+	} catch (error) {
+		console.error('Error reading the SCSS file:', error);
+		return {};
+	}
 }

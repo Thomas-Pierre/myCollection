@@ -38,10 +38,26 @@ body {
 	}
 }
 
+body[data-type='light'] {
+	main {
+		background-color: rgba($white, 0.9);
+		color: $grey-300;
+	}
+}
+
+body[data-type='dark'] {
+	main {
+		background-color: transparent;
+		color: $white;
+	}
+}
+
 main {
 	padding: $spacing-4;
+	min-height: calc(100vh - var(--header-height, 0) - var(--navbar-height, 0));
 
-	@include over-mobile() {
+	@include on-desktop() {
 		padding: $spacing-8;
+		min-height: calc(100vh - var(--header-height, 0));
 	}
 }

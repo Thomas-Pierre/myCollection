@@ -1,5 +1,5 @@
-$main-color: #e4887e;
-$alt-color: #3b3b5f;
+@import './../themes/default.scss';
+
 $text-color: #ffffff;
 
 $main-color-light: ligthen($main-color, 10);
@@ -23,8 +23,3 @@ $grey-700: #b3b3b3;
 $grey-800: #cccccc;
 $grey-900: #e6e6e6;
 $white: #ffffff;
-
-:export {
-	mainColor: $main-color;
-	altColor: $alt-color;
-}

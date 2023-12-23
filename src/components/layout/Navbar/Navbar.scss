@@ -2,13 +2,15 @@ nav {
 	position: fixed;
 	width: 100%;
 	bottom: 0;
-	padding: $spacing-4;
+	padding-inline: $spacing-2;
+	padding-top: $spacing-4;
+	padding-bottom: $spacing-8;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
 	background-color: rgba($alt-color, 0.5);
 	box-shadow: 0 0 50rem rgba($black, 0.75);
-	@include backgroundBlur(15rem);
+	@include backgroundBlur(7rem);
 
 	a {
 		opacity: 0.7;
