@@ -5,7 +5,7 @@
 </script>
 
 <section>
-	<a href="/library/vinyles" class="container">
+	<a href="/library" class="container">
 		<Title text="Disques Vinyles" size="l" tag="h2" noMargin />
 		<Picto icon="user" />
 	</a>
