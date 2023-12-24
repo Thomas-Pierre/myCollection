@@ -11,12 +11,12 @@
 </script>
 
 <section>
-	<a href="/" class="container">
+	<a href="/">
 		<Title text="Disques Vinyles" size="l" tag="h2" noMargin />
 		<Picto icon="chevron-right" />
 	</a>
 
-	<ul>
+	<ul class="fullwidth">
 		{#each vinyls as data}
 			<li><a href="/"><Vinyl {data} detailled /></a></li>
 		{/each}
@@ -24,12 +24,12 @@
 </section>
 
 <section>
-	<a href="/" class="container">
+	<a href="/">
 		<Title text="Bandes Dessinées" size="l" tag="h2" noMargin />
 		<Picto icon="chevron-right" />
 	</a>
 
-	<ul>
+	<ul class="fullwidth">
 		{#each comics as data}
 			<li><a href="/"><Book {data} detailled /></a></li>
 		{/each}
@@ -37,12 +37,12 @@
 </section>
 
 <section>
-	<a href="/" class="container">
+	<a href="/">
 		<Title text="Jeux PS5" size="l" tag="h2" noMargin />
 		<Picto icon="chevron-right" />
 	</a>
 
-	<ul>
+	<ul class="fullwidth">
 		{#each ps5_games as data}
 			<li><a href="/"><DVD {data} detailled type="PS5" /></a></li>
 		{/each}
@@ -50,16 +50,18 @@
 </section>
 
 <style lang="scss">
-	section + section {
-		margin-top: 2 * $spacing-8;
-	}
+	section {
+		& + section {
+			margin-top: 2 * $spacing-8;
+		}
 
-	a.container {
-		display: flex;
-		font-size: 20rem;
-		padding-left: $spacing-2;
-		border-left: 4rem solid $main-color;
-		margin-bottom: $spacing-8;
+		& > a {
+			display: flex;
+			font-size: 20rem;
+			padding-left: $spacing-2;
+			border-left: 4rem solid $main-color;
+			margin-bottom: $spacing-8;
+		}
 	}
 
 	ul {

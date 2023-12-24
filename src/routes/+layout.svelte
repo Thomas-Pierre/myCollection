@@ -11,6 +11,6 @@
 </svelte:head>
 
 <Theme />
-<Navbar />
+<main id="main"><slot /></main>
 <Header />
-<main><slot /></main>
+<Navbar />

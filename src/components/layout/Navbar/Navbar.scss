@@ -1,7 +1,7 @@
 nav {
-	position: fixed;
-	width: 100%;
+	position: sticky;
 	bottom: 0;
+	width: 100%;
 	padding-inline: $spacing-2;
 	padding-top: $spacing-4;
 	padding-bottom: $spacing-8;
@@ -17,23 +17,19 @@ nav {
 		opacity: 0.7;
 		font-size: min(7vw, 32rem);
 
-		&.current {
+		&.active {
 			color: $main-color;
 			opacity: 1;
 		}
 	}
 }
 
-:global(#app) {
-	padding-bottom: var(--navbar-height);
-}
-
 @include on-desktop() {
 	nav {
-		left: 0;
-		right: auto;
+		position: sticky;
+		top: 0;
 		width: auto;
-		inset-block: 0;
+		height: 100vh;
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: center;
@@ -41,7 +37,26 @@ nav {
 		gap: $spacing-8;
 		padding: $spacing-4;
 
-		:global(button.plus) {
+		&.hidden {
+			position: absolute;
+			transform: translateX(-100%);
+			transition: transition(transform, 200ms);
+
+			&:hover {
+				transform: translateX(0);
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 100%;
+				bottom: 0;
+				width: 20rem;
+			}
+		}
+
+		:global(.plus) {
 			order: 1;
 			margin-bottom: auto;
 		}
@@ -49,10 +64,5 @@ nav {
 		a {
 			order: 2;
 		}
-	}
-
-	:global(#app) {
-		padding-bottom: 0;
-		padding-left: var(--navbar-width);
 	}
 }

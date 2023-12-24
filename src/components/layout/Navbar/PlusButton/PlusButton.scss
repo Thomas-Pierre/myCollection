@@ -1,4 +1,4 @@
-button.plus {
+.plus {
 	font-size: 15rem;
 	width: 2em;
 	aspect-ratio: 1;
@@ -13,10 +13,16 @@ button.plus {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	&.active {
+		color: $main-color;
+		border-width: 0.15em;
+		box-shadow: 0 0.125em 0.5em rgba($black, 0.95);
+	}
 }
 
 @include on-desktop() {
-	button.plus {
+	.plus {
 		transform: scale(2.5) translate(12.5%, 25%);
 	}
 }

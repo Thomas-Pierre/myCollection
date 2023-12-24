@@ -10,6 +10,10 @@
 				"placeholder": "rechercher..."
 			}
 		},
+		"new": {
+			"title": "Nouvel object",
+			"name": "Ajouter un objet à ma collection"
+		},
 		"help": {
 			"title": "Aide",
 			"name": "Page d'aide"

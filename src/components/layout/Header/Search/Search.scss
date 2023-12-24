@@ -8,10 +8,10 @@ form {
 	button {
 		position: fixed;
 		inset: 0;
-		z-index: 0;
-		background-color: rgba($black, 0.15);
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba($black, 0.35);
 		cursor: default;
-		@include backgroundBlur();
 	}
 
 	div {
@@ -29,7 +29,7 @@ form {
 		input[type='search'] {
 			appearance: none;
 			display: block;
-			width: min(500rem, 80vw);
+			width: min(500rem, calc(100vw - $spacing-8));
 			padding: $spacing-6 $spacing-4;
 			border-radius: $spacing-2;
 			border: 1rem solid $grey-200;

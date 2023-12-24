@@ -1,41 +1,20 @@
 <script>
-	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 	import { translate } from '@src/utils/translate';
 	import Picto from '@src/components/ui/Picto/Picto.svelte';
 	import PlusButton from './PlusButton/PlusButton.svelte';
-	import { page } from '$app/stores';
-
-	/** @type {number} */
-	let clientHeight;
-
-	/** @type {number} */
-	let clientWidth;
-
-	/**  @type {Document} */
-	let document;
-
-	$: document?.documentElement.style.setProperty('--navbar-height', `${clientHeight}rem`);
-	$: document?.documentElement.style.setProperty('--navbar-width', `${clientWidth}rem`);
-
-	onMount(() => {
-		document = window.document;
-	});
 
 	const menuItems = [
-		{ href: '/', icon: 'files' },
-		{ href: '/settings', icon: 'gear' },
-		{ href: '/help', icon: 'question-mark' },
-		{ href: '/account', icon: 'user' }
+		{ href: '/', route: 'library', icon: 'files' },
+		{ href: '/settings', route: 'settings', icon: 'gear' },
+		{ href: '/help', route: 'help', icon: 'question-mark' },
+		{ href: '/account', route: 'account', icon: 'user' }
 	];
 </script>
 
-<nav bind:clientHeight bind:clientWidth>
-	{#each menuItems as { href, icon }, i}
-		<a
-			{href}
-			class:current={$page.route.id === href}
-			title={translate(`common.navbar.${href.replace('/', '')}`)}
-		>
+<nav id="navbar">
+	{#each menuItems as { href, route, icon }, i}
+		<a {href} class:active={$page.route.id === href} title={translate(`common.navbar.${route}`)}>
 			<Picto {icon} />
 		</a>
 
