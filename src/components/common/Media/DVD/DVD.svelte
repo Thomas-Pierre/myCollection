@@ -1,11 +1,11 @@
 <script>
 	import { capitalize } from '@src/utils/string';
 
-	/** @type {undefined|Vinyl} */
+	/** @type {undefined|DVD} */
 	export let data = undefined;
 
-	/** @type {undefined|"full"|"half"|"barely"} */
-	export let open = undefined;
+	/** @type {string} */
+	export let type = 'DVD';
 
 	/** @type {"xs"|"s"|"m"|"l"|"xl"|"xxl"} */
 	export let size = 'm';
@@ -15,10 +15,7 @@
 </script>
 
 <article
-	class="size-{size}"
-	class:full-open={open === 'full'}
-	class:barely-open={open === 'barely'}
-	class:half-open={open === 'half'}
+	class="size-{size} type-{type}"
 	style="--cover-image: url({data?.medias?.cover});--cover-ratio: {data?.medias?.ratio || '1/1'};"
 >
 	<div class="cover" />
@@ -30,5 +27,5 @@
 </article>
 
 <style lang="scss">
-	@import './Vinyl.scss';
+	@import './DVD.scss';
 </style>

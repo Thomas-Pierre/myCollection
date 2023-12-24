@@ -1,5 +1,5 @@
 /**
- * @typedef Vinyl
+ * @typedef Book
  * @type {object}
  * @property {number} id
  * @property {string} name
@@ -7,11 +7,11 @@
  * @property {string} author
  * @property {string} editor
  * @property {string} editor
- * @property {VinylMedia} medias
+ * @property {BookMedia} medias
  */
 
 /**
- * @typedef VinylMedia
+ * @typedef BookMedia
  * @type {object}
  * @property {string} ratio
  * @property {string} cover

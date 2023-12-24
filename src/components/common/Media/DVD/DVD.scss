@@ -5,7 +5,6 @@ article {
 	width: fit-content;
 	max-width: min-content;
 	text-align: center;
-	transition: transition(padding-right);
 
 	@mixin background($image) {
 		background-image: $image;
@@ -33,50 +32,29 @@ article {
 		font-size: 28rem;
 	}
 
-	&.full-open {
-		padding-right: 8em;
+	&.type-DVD .cover {
+		@include background(url('./boxes/DVD.png'));
 	}
 
-	&.barely-open {
-		padding-right: 3em;
-	}
-
-	&.half-open {
-		padding-right: 5.75em;
+	&.type-PS5 .cover {
+		@include background(url('./boxes/PS5.png'));
 	}
 
 	.cover {
 		height: 12em;
-		aspect-ratio: var(--cover-ratio);
+		aspect-ratio: 4/5;
 		background-color: $grey-500;
 		border-radius: 2%;
 		box-shadow: 0 0.75em 5rem -5rem rgba($black, 0.35);
 		margin-bottom: $spacing-4;
-		@include background(var(--cover-image));
+		position: relative;
 
-		&::after {
+		&:after {
 			content: '';
 			position: absolute;
-			right: 0;
-			top: 0.25em;
-			height: 11.5em;
-			aspect-ratio: 1;
-			z-index: -2;
-			@include background(url('./disk.png'));
-		}
-
-		&::before {
-			content: '';
-			position: absolute;
-			right: 0;
-			top: 3.625em;
-			right: 3.35em;
-			height: 4.75em;
-			aspect-ratio: 1;
-			z-index: -1;
-			border-radius: 100%;
+			inset: 2% 4% 2% 0;
 			@include background(var(--cover-image));
-			filter: brightness(0.75) grayscale(0.25);
+			background-position: center top;
 		}
 	}
 
@@ -84,6 +62,7 @@ article {
 		font-size: max(14rem, 0.9em);
 		@include maxLines(1);
 	}
+
 	span {
 		font-size: max(14rem, 0.85em);
 		@include maxLines(1);

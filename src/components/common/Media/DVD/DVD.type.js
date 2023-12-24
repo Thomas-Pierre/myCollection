@@ -1,5 +1,5 @@
 /**
- * @typedef Vinyl
+ * @typedef DVD
  * @type {object}
  * @property {number} id
  * @property {string} name
@@ -7,13 +7,14 @@
  * @property {string} author
  * @property {string} editor
  * @property {string} editor
- * @property {VinylMedia} medias
+ * @property {DVDMedia} medias
  */
 
 /**
- * @typedef VinylMedia
+ * @typedef DVDMedia
  * @type {object}
  * @property {string} ratio
  * @property {string} cover
  * @property {string} back
+ * @property {string} boxColor
  */

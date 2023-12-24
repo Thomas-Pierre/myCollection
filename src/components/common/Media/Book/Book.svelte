@@ -1,11 +1,8 @@
 <script>
 	import { capitalize } from '@src/utils/string';
 
-	/** @type {undefined|Vinyl} */
+	/** @type {undefined|Book} */
 	export let data = undefined;
-
-	/** @type {undefined|"full"|"half"|"barely"} */
-	export let open = undefined;
 
 	/** @type {"xs"|"s"|"m"|"l"|"xl"|"xxl"} */
 	export let size = 'm';
@@ -16,9 +13,6 @@
 
 <article
 	class="size-{size}"
-	class:full-open={open === 'full'}
-	class:barely-open={open === 'barely'}
-	class:half-open={open === 'half'}
 	style="--cover-image: url({data?.medias?.cover});--cover-ratio: {data?.medias?.ratio || '1/1'};"
 >
 	<div class="cover" />
@@ -30,5 +24,5 @@
 </article>
 
 <style lang="scss">
-	@import './Vinyl.scss';
+	@import './Book.scss';
 </style>

@@ -6,6 +6,7 @@
 		"author": "Ghost",
 		"editor": "",
 		"medias": {
+			"ratio": "1/1",
 			"cover": "https://www.heavyblogisheavy.com/content/images/originals/e7/93/5d/e7935dc4ed1381aae8d97caac09ed4ff.jpg",
 			"back": ""
 		}
@@ -17,6 +18,7 @@
 		"author": "Pink Floyd",
 		"editor": "",
 		"medias": {
+			"ratio": "1/1",
 			"cover": "https://images.theconversation.com/files/512871/original/file-20230301-26-ryosag.jpg",
 			"back": ""
 		}
@@ -28,6 +30,7 @@
 		"author": "Nirvana",
 		"editor": "",
 		"medias": {
+			"ratio": "1/1",
 			"cover": "https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg",
 			"back": ""
 		}
@@ -39,6 +42,7 @@
 		"author": "Guns N' Roses",
 		"editor": "",
 		"medias": {
+			"ratio": "1/1",
 			"cover": "https://www.udiscovermusic.com/wp-content/uploads/2017/07/Guns-N-Roses-Appetite-For-Destruction-Album-Cover-Web-Optimsied-820.jpg",
 			"back": ""
 		}

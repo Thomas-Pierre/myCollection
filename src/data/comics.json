@@ -1,0 +1,50 @@
+[
+	{
+		"id": 3616816516161,
+		"name": "Kryptonite Nevermore !",
+		"secondaryName": "The amazing new adventure of Superman Number 1",
+		"author": "Jerry Siegel, Joe Shuster",
+		"editor": "DC Comics",
+		"medias": {
+			"ratio": "2/3",
+			"cover": "https://i.ebayimg.com/images/g/HqQAAOSwf9Zj5qIt/s-l1600.png",
+			"back": ""
+		}
+	},
+	{
+		"id": 3616816516162,
+		"name": "Bluk-Bluk Zogotounga",
+		"secondaryName": "",
+		"author": "Édika",
+		"editor": "Fluide Glacial",
+		"medias": {
+			"ratio": "10/13",
+			"cover": "https://www.bedetheque.com/media/Couvertures/Couv_7441.jpg",
+			"back": ""
+		}
+	},
+	{
+		"id": 3616816516163,
+		"name": "Le Déclic, Tome 3",
+		"secondaryName": "",
+		"author": "Manara",
+		"editor": "Drugstore",
+		"medias": {
+			"ratio": "3/4",
+			"cover": "https://m.media-amazon.com/images/I/71blnGx+ROL._SL1500_.jpg",
+			"back": ""
+		}
+	},
+	{
+		"id": 3616816516164,
+		"name": "Astérix, L'iris Blanc",
+		"secondaryName": "",
+		"author": "A. Uderzo, R. Gossigny",
+		"editor": "",
+		"medias": {
+			"ratio": "3/4",
+			"cover": "https://m.media-amazon.com/images/I/81-9ynE8omL._SL1500_.jpg",
+			"back": ""
+		}
+	}
+]
