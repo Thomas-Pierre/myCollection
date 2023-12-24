@@ -22,7 +22,7 @@
 	});
 
 	const menuItems = [
-		{ href: '/library', icon: 'files' },
+		{ href: '/', icon: 'files' },
 		{ href: '/settings', icon: 'gear' },
 		{ href: '/help', icon: 'question-mark' },
 		{ href: '/account', icon: 'user' }

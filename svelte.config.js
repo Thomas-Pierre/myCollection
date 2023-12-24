@@ -26,6 +26,7 @@ const config = {
 			'@utils': './src/utils',
 			'@stores': './src/stores',
 			'@components': './src/components',
+			'@data': './src/data',
 			'@modules': './node_modules'
 		}
 	}

@@ -6,6 +6,7 @@ header {
 	box-shadow: 0 0 50rem rgba($black, 0.75);
 	@include backgroundBlur(7rem);
 	display: flex;
+	z-index: 1;
 }
 
 @include on-desktop() {

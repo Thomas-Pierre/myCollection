@@ -2,3 +2,18 @@
 	backdrop-filter: blur($size);
 	-webkit-backdrop-filter: blur($size);
 }
+
+@mixin maxLines($maxLines: 3) {
+	display: -webkit-box;
+	-webkit-line-clamp: $maxLines;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+@mixin hideScrollBars() {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}

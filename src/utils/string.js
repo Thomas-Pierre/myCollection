@@ -3,8 +3,12 @@
  * @param {string} string
  * @returns {string}
  */
+
 export function capitalize(string) {
-	return string.toLowerCase().charAt(0).toUpperCase() + string.toLowerCase().slice(1);
+	return string
+		.replace(/\W+/gi, ' ')
+		.replace(/(?:^\w|[A-Z]|\b\w)/g, (word) => word.toUpperCase())
+		.replace(/\s+/g, ' ');
 }
 
 /**
