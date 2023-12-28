@@ -9,6 +9,17 @@ html {
 	@include on-mobile() {
 		font-size: 0.9px;
 	}
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		&:focus,
+		&:focus-visible,
+		&:focus-within {
+			outline: 2rem solid $alt-color !important;
+		}
+	}
 }
 
 body {

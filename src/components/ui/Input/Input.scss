@@ -1,0 +1,60 @@
+div {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	opacity: 0.9;
+
+	label {
+		font-size: 18rem;
+		font-weight: 600;
+		display: block;
+		margin-bottom: $spacing-2;
+	}
+
+	input,
+	textarea {
+		font-size: 18rem;
+		font-weight: 600;
+		appearance: none;
+		width: 100%;
+		background-color: $white;
+		border: 3rem solid $white;
+		border-radius: 10rem;
+		padding: $spacing-4;
+		font-size: 16rem;
+		box-shadow: 0 15rem 10rem -10rem rgba($black, 0.25);
+		outline-offset: 5rem;
+
+		&:focus,
+		&:focus-visible,
+		&:focus-within {
+			outline: 2rem solid $white;
+			outline-offset: 3rem;
+		}
+
+		&.error {
+			border-color: $danger-color;
+		}
+
+		&.success {
+			border-color: $success-color;
+		}
+	}
+
+	textarea {
+		font-family: inherit;
+		resize: vertical;
+		min-height: 7em;
+	}
+
+	span {
+		font-size: 13rem;
+		padding: 0.2em 0.5em;
+		margin-top: -10rem;
+		background-color: $danger-color;
+		color: $white;
+		font-weight: 600;
+		border-bottom-left-radius: 10rem;
+		border-bottom-right-radius: 10rem;
+	}
+}
