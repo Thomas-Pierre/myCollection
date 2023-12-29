@@ -1,7 +1,7 @@
 <script>
 	import { fly, fade } from 'svelte/transition';
 	import { randomID } from '@src/utils';
-	import { checkInputError } from '@src/utils/form';
+	import { checkInputErrors } from '@src/utils/form';
 
 	/** @type {"text"|"email"|"search"|"textarea"} */
 	export let type = 'text';
@@ -15,16 +15,7 @@
 	/** @type {undefined|FormRulesMessages} */
 	export let messages = undefined;
 
-	function testInput() {
-		tested = true;
-		error = checkInputError(input, rules, messages);
-		success = !error;
-	}
-
-	let input;
-	let tested = false;
 	let error = null;
-	let success = null;
 	const { id = `input-${randomID(8)}` } = $$restProps;
 </script>
 
@@ -35,11 +26,8 @@
 		{id}
 		{...$$restProps}
 		type={type !== 'textarea' ? type : undefined}
-		class:error
-		class:success
-		bind:this={input}
-		on:blur={testInput}
-		on:input={tested && testInput}
+		use:checkInputErrors={{ rules, messages }}
+		on:checked={({ detail }) => (error = detail)}
 	/>
 
 	{#if error}

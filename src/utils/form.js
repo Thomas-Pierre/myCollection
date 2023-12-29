@@ -1,24 +1,43 @@
 import { translate } from './translate';
 
-/**
- * Return an error message if input is not correct
- * @param {HTMLFormElement|Object} input
- * @param {FormRules|Object} rules
- * @param {FormRulesMessages|Object} messages
- * @returns
- */
-export function checkInputError(input = {}, rules = {}, messages = {}) {
-	const { value } = input;
-	const { required, minLength, maxLength } = rules;
-	const {
-		required: requiredMessage = translate('form.errorMessages.required'),
-		minLength: minLengthMessage = translate('form.errorMessages.minLength', [minLength]),
-		maxLength: maxLengthMessage = translate('form.errorMessages.maxLength', [maxLength])
-	} = messages;
+export function checkAllInputErrors(form) {
+	form.addEventListener('submit', () => {
+		form.querySelectorAll('input, textarea').forEach((input) => {
+			input.tested = true;
+			input.dispatchEvent(new Event('input'));
+		});
+	});
+}
 
-	if (required && value.length === 0) return requiredMessage;
-	if (minLength && value.length < minLength) return minLengthMessage;
-	if (maxLength && value.length > maxLength) return maxLengthMessage;
+export function checkInputErrors(input = {}, data = {}) {
+	let error = null;
+	const checkInput = () => {
+		const { value, type, name } = input;
+		const { required, minLength, maxLength } = data.rules || {};
+		const {
+			required: requiredMessage = translate('form.errorMessages.required'),
+			minLength: minLengthMessage = translate('form.errorMessages.minLength', [minLength]),
+			maxLength: maxLengthMessage = translate('form.errorMessages.maxLength', [maxLength])
+		} = data.messages || {};
 
-	return false;
+		if (
+			type === 'radio' &&
+			input.parentNode.querySelectorAll(`input[name=${name}]:checked`).length === 0
+		)
+			error = requiredMessage;
+		else if (required && value.length === 0) error = requiredMessage;
+		else if (minLength && value.length < minLength) error = minLengthMessage;
+		else if (maxLength && value.length > maxLength) error = maxLengthMessage;
+		else error = null;
+
+		if (input.tested) {
+			input.classList.toggle('error', error);
+			input.classList.toggle('success', !error);
+			input.dispatchEvent(new CustomEvent('checked', { detail: error }));
+		}
+	};
+
+	input.addEventListener('input', checkInput);
+	input.addEventListener('change', checkInput);
+	input.addEventListener('blur', checkInput);
 }

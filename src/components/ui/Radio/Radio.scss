@@ -37,6 +37,14 @@ div {
 			cursor: pointer;
 			transition: transition(background-color, 125ms);
 
+			&.error {
+				border-color: $danger-color;
+			}
+
+			&.success:checked {
+				background-color: $success-color;
+			}
+
 			&:checked {
 				background-color: $main-color-dark;
 			}
@@ -53,4 +61,14 @@ div {
 			cursor: pointer;
 		}
 	}
+}
+
+span {
+	font-size: 13rem;
+	padding: 0.2em 0.5em;
+	margin-top: -20rem;
+	background-color: $danger-color;
+	color: $white;
+	font-weight: 600;
+	border-radius: 10rem;
 }
