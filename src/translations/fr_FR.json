@@ -39,5 +39,12 @@
 			"user": "Utilisateur",
 			"addItem": "Ajouter un object à ma collection"
 		}
+	},
+	"form": {
+		"errorMessages": {
+			"required": "Ce champs est requis",
+			"minLength": "Ce champs est trop court, {0} caractères minimum",
+			"maxLength": "Ce champs est trop long, {0} caractères maximum"
+		}
 	}
 }

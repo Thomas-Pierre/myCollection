@@ -1,6 +1,7 @@
 <script>
 	import { fly, fade } from 'svelte/transition';
 	import { randomID } from '@src/utils';
+	import { checkInputError } from '@src/utils/form';
 
 	/** @type {"text"|"email"|"search"|"textarea"} */
 	export let type = 'text';
@@ -8,22 +9,16 @@
 	/** @type {string} */
 	export let label = '';
 
-	/** @type {undefined|object} */
+	/** @type {undefined|FormRules} */
 	export let rules = undefined;
 
-	function testInput() {
-		const { required, minLength, maxLength } = rules || {};
-		tested = true;
+	/** @type {undefined|FormRulesMessages} */
+	export let messages = undefined;
 
-		if (required && input.value.length === 0) error = 'Ce champs est requis';
-		else if (minLength && input.value.length < minLength)
-			error = `Ce champs est trop court, ${minLength} caractères minimum`;
-		else if (maxLength && input.value.length > maxLength)
-			error = `Ce champs est trop long, ${maxLength} caractères minimum`;
-		else {
-			error = null;
-			if (tested) success = true;
-		}
+	function testInput() {
+		tested = true;
+		error = checkInputError(input, rules, messages);
+		success = !error;
 	}
 
 	let input;

@@ -1,0 +1,56 @@
+div {
+	display: flex;
+	flex-direction: column;
+
+	strong {
+		margin-bottom: $spacing-3;
+	}
+
+	ul {
+		display: flex;
+		gap: $spacing-8;
+		align-items: center;
+		justify-content: flex-start;
+
+		flex-wrap: wrap;
+
+		&:not(.inline) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		li {
+			display: flex;
+			gap: $spacing-2;
+			cursor: pointer;
+		}
+
+		input {
+			appearance: none;
+			width: 20rem;
+			height: 20rem;
+			border-radius: 100%;
+			background-color: $white;
+			border: 3rem solid $white;
+			box-shadow: 0 5rem 5rem -2rem rgba($black, 0.25);
+			opacity: 0.9;
+			cursor: pointer;
+			transition: transition(background-color, 125ms);
+
+			&:checked {
+				background-color: $main-color-dark;
+			}
+
+			&:focus,
+			&:focus-visible,
+			&:focus-within {
+				outline: 2rem solid $white;
+				outline-offset: 3rem;
+			}
+		}
+
+		label {
+			cursor: pointer;
+		}
+	}
+}

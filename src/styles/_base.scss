@@ -14,10 +14,11 @@ html {
 	*::before,
 	*::after {
 		box-sizing: border-box;
+
 		&:focus,
 		&:focus-visible,
 		&:focus-within {
-			outline: 2rem solid $alt-color !important;
+			outline: 2rem solid $main-color !important;
 		}
 	}
 }
